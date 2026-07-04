@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Admin Panel</title>
+    <style>
+        body { font-family: Arial; padding:20px; background:#f4f4f4; }
+        table { width:100%; border-collapse: collapse; background:white; }
+        th, td { border:1px solid #ccc; padding:8px; text-align:left; }
+        th { background:#222; color:white; }
+    </style>
+</head>
+<body>
+    <h2>UPI Fraud Detection – Admin Panel</h2>
+    <p><a href="/">Home</a> • <a href="/add_test">Add test record</a></p>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>UPI</th>
+            <th>Merchant</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>DOB</th>
+            <th>Trans DateTime</th>
+            <th>Result</th>
+            <th>Created At</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row['id'] }}</td>
+            <td>{{ row['upi_num'] }}</td>
+            <td>{{ row['merchant'] }}</td>
+            <td>{{ row['amount'] }}</td>
+            <td>{{ row['status'] }}</td>
+            <td>{{ row['dob'] }}</td>
+            <td>{{ row['trans_datetime'] }}</td>
+            <td>{{ row['result'] }}</td>
+            <td>{{ row['created_at'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
